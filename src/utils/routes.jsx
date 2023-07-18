@@ -5,7 +5,7 @@ import {
     MAIN_PAGE_ROUTE,
     PROFILE_ROUTE,
     REGISTER_ROUTE
-} from "./consts"
+} from "./variables/routes-consts"
 import MainPage from "../pages/main.page"
 import LoginPage from "../pages/login.page"
 import CardModePage from "../pages/card.mode.page"

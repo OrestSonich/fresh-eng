@@ -1,4 +1,4 @@
-@import "variables";
+@import "../variables";
 
 .title-container {
   background-color: $back-dark-color;
@@ -47,7 +47,7 @@
 }
 
 .benefits-container {
-  padding: 200px 250px 0px 250px;
+  padding: 200px 250px 0 250px;
   height: 1420px;
   background-color: $back-light-color;
   font-family: "Ubuntu", sans-serif;

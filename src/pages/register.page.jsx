@@ -1,8 +1,8 @@
 import React from 'react'
-import '../styles/register.page.scss'
-import AppButton from "../components/app.button"
-import PasswordRegisterField from "../components/password.register.field"
-import EmailRegisterField from "../components/email.register.field"
+import '../styles/pages/register.page.scss'
+import AppButton from "../components/app.ui/app.button"
+import PasswordRegisterField from "../components/third-party.ui/password.register.field"
+import EmailRegisterField from "../components/third-party.ui/email.register.field"
 
 
 const RegisterPage = () => {

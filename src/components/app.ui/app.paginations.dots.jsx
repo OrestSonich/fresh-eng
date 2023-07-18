@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/app.pagination.scss'
+import '../../styles/app.ui/app.pagination.scss'
 
 
 const AppPaginationsDots = ({ count, active }) => {

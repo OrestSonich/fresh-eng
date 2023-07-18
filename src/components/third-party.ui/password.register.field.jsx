@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { getPasswordStrength, requirements } from "../utils/getPasswordStrenght"
+import { getPasswordStrength, requirements } from "../../utils/getPasswordStrenght"
 import PasswordRequirement from "./password.requirement"
 import { Box, PasswordInput, Popover, Progress } from "@mantine/core"
 
