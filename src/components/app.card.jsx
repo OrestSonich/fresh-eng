@@ -1,9 +1,9 @@
 import React from 'react'
 import '../styles/app.card.scss'
 
-const AppCard = ({children}) => {
+const AppCard = ({children, className}) => {
     return (
-        <div className='card-main'>
+        <div className={className ? `card-main ${className}`: 'card-main'}>
             {children}
         </div>
     )

@@ -1,49 +1,58 @@
 @import "variables";
 
-.title-container{
+.title-container {
   background-color: $back-dark-color;
   height: 940px;
   padding: 80px 250px;
 
-  .pagination-container{
+  .pagination-container {
     margin-top: 80px;
   }
 }
-.flex-container{
+
+.flex-container {
   display: flex;
   justify-content: space-between;
-  .text-container{
+
+  .text-container {
     margin-top: 50px;
-    .line{
+
+    .line {
       border: 2px solid $blue-line-color;
       border-radius: 15px;
       width: 450px;
       margin-bottom: 40px;
     }
-    h1{
+
+    h1 {
       font-family: "Ubuntu", sans-serif;
       font-size: 56px;
       letter-spacing: 1.92px;
       font-weight: bold;
       margin-bottom: 20px;
     }
-    h3{
+
+    h3 {
       font-size: 36px;
     }
-    :last-child{
+
+    :last-child {
       margin-top: 20px;
     }
   }
-  .card-contain{
+
+  .card-contain {
 
   }
 }
-.benefits-container{
+
+.benefits-container {
   padding: 200px 250px 0px 250px;
   height: 1420px;
   background-color: $back-light-color;
   font-family: "Ubuntu", sans-serif;
-  .benefits-ready{
+
+  .benefits-ready {
     text-align: center;
     margin-top: 220px;
     font-size: 64px;
@@ -51,13 +60,65 @@
     letter-spacing: 1.28px;
     margin-bottom: 50px;
   }
-  .btn-holder{
+
+  .btn-holder {
     text-align: center;
   }
-  .started-btn{
+
+  .started-btn {
     color: $text-white-color;
     width: 510px;
     height: 90px;
     font-size: 40px;
   }
 }
+
+.modes-container {
+  padding: 110px 90px 0 90px;
+  height: 1080px;
+  background-color: $back-dark-color;
+  font-family: "Ubuntu", sans-serif;
+
+  h1 {
+    text-align: center;
+    font-size: 64px;
+    font-weight: 500;
+    letter-spacing: 1.28px;
+    margin-bottom: 70px;
+  }
+
+  .cards-flex {
+    display: flex;
+    justify-content: space-between;
+    height: 700px;
+
+    :nth-child(-n+3) {
+      width: 500px;
+      height: 550px;
+    }
+
+    .down-card {
+      margin-top: 80px;
+    }
+  }
+
+  .arrows-holder {
+    position: relative;
+    text-align: center;
+
+    .arrows-clock {
+      position: absolute;
+      left: 50%;
+      top: -100px;
+      margin-left: -60px;
+    }
+  }
+}
+
+.for-teachers-container {
+  height: 1080px;
+  padding: 200px 250px 0 250px;
+  background-color: $back-light-color;
+  font-family: "Ubuntu", sans-serif;
+}
+

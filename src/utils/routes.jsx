@@ -1,9 +1,17 @@
-import { AUTH_ROUTE, CARDS_MODE_ROUTE, CHOSE_MOD_ROUTE, MAIN_PAGE_ROUTE, PROFILE_ROUTE } from "./consts"
+import {
+    CARDS_MODE_ROUTE,
+    CHOSE_MOD_ROUTE,
+    LOGIN_ROUTE,
+    MAIN_PAGE_ROUTE,
+    PROFILE_ROUTE,
+    REGISTER_ROUTE
+} from "./consts"
 import MainPage from "../pages/main.page"
-import AuthPage from "../pages/auth.page"
+import LoginPage from "../pages/login.page"
 import CardModePage from "../pages/card.mode.page"
 import ChoseModPage from "../pages/chose.mod.page"
 import profilePage from "../pages/profile.page"
+import RegisterPage from "../pages/register.page"
 
 
 export const authRoutes = [
@@ -26,7 +34,11 @@ export const publicRoutes = [
         component: MainPage
     },
     {
-        path: AUTH_ROUTE,
-        component: AuthPage
+        path: LOGIN_ROUTE,
+        component: LoginPage
+    },
+    {
+        path: REGISTER_ROUTE,
+        component: RegisterPage
     },
 ]

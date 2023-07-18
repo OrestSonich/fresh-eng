@@ -1,0 +1,103 @@
+@import "variables";
+
+.main-container {
+  display: flex;
+  background-color: $back-light-color;
+  font-family: "Ubuntu", sans-serif;
+  height: 100vh;
+
+  .interactive-content {
+    flex-grow: 1;
+    padding: 94px 280px 95px 176px;
+
+    h1 {
+      font-size: 64px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      user-select: none;
+    }
+
+    h4 {
+      font-size: 36px;
+      font-weight: 600;
+      margin-bottom: 60px;
+      user-select: none;
+    }
+
+    p {
+      font-family: "Ubuntu", sans-serif;
+      font-size: 32px;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+
+    .email-input {
+      width: 692px;
+      height: 68px;
+      border: 1px solid black;
+      border-radius: 10px;
+      background-color: $back-dark-color;
+      font-size: 32px;
+      padding: 0 14px;
+    }
+
+    .email-holder {
+      margin-bottom: 48px;
+    }
+
+    .password-holder {
+      margin-bottom: 60px;
+    }
+
+    .btn-holder {
+      text-align: center;
+    }
+
+    .btn-app {
+      width: 404px;
+      height: 74px;
+      font-size: 42px;
+      font-weight: 500;
+      margin-top: 55px;
+      margin-bottom: 60px;
+    }
+
+    h3 {
+      text-align: center;
+      color: rgba(0, 0, 0, 0.80);
+      font-size: 32px;
+      font-weight: 400;
+    }
+
+    span {
+      margin-left: 20px;
+      color: rgba(29, 106, 255, 0.80);
+    }
+  }
+
+  h2 {
+    font-size: 48px;
+    font-weight: 500;
+    margin-left: 150px;
+    margin-bottom: 26px;
+  }
+
+  .decoration {
+    color: $text-white-color;
+    background-color: $navbar-color;
+    height: 100vh;
+    width: 40%;
+    padding-top: 150px;
+    user-select: none;
+
+    hr {
+      margin-left: 150px;
+      width: 425px;
+      height: 2px;
+    }
+
+    img {
+      margin: 0 auto;
+    }
+  }
+}
