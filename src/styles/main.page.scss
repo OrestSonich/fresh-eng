@@ -1,0 +1,63 @@
+@import "variables";
+
+.title-container{
+  background-color: $back-dark-color;
+  height: 940px;
+  padding: 80px 250px;
+
+  .pagination-container{
+    margin-top: 80px;
+  }
+}
+.flex-container{
+  display: flex;
+  justify-content: space-between;
+  .text-container{
+    margin-top: 50px;
+    .line{
+      border: 2px solid $blue-line-color;
+      border-radius: 15px;
+      width: 450px;
+      margin-bottom: 40px;
+    }
+    h1{
+      font-family: "Ubuntu", sans-serif;
+      font-size: 56px;
+      letter-spacing: 1.92px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    h3{
+      font-size: 36px;
+    }
+    :last-child{
+      margin-top: 20px;
+    }
+  }
+  .card-contain{
+
+  }
+}
+.benefits-container{
+  padding: 200px 250px 0px 250px;
+  height: 1420px;
+  background-color: $back-light-color;
+  font-family: "Ubuntu", sans-serif;
+  .benefits-ready{
+    text-align: center;
+    margin-top: 220px;
+    font-size: 64px;
+    font-weight: 500;
+    letter-spacing: 1.28px;
+    margin-bottom: 50px;
+  }
+  .btn-holder{
+    text-align: center;
+  }
+  .started-btn{
+    color: $text-white-color;
+    width: 510px;
+    height: 90px;
+    font-size: 40px;
+  }
+}
