@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { getPasswordStrength, requirements } from "../../utils/getPasswordStrenght"
 import PasswordRequirement from "./password.requirement"
 import { Box, PasswordInput, Popover, Progress } from "@mantine/core"
+import { IconLock } from "@tabler/icons-react"
 
 
 const PasswordRegisterField = () => {
@@ -26,10 +27,10 @@ const PasswordRegisterField = () => {
                         onBlurCapture={() => setPassPopoverOpened(false)}
                     >
                         <PasswordInput
-                            placeholder="Password"
+                            placeholder="Password:"
                             size="xl"
                             radius="md"
-                            label="Password:"
+                            icon={<IconLock size="25"/>}
                             onChange={(event) =>
                                 setPassValue(event.target.value)}
                         />

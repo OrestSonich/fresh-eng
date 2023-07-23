@@ -1,7 +1,7 @@
 @import "../variables";
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,500&display=swap');
 
-nav{
+nav {
   height: 100px;
   background-color: $navbar-color;
   padding: 0 150px;
@@ -10,35 +10,46 @@ nav{
   color: $text-white-color;
   font-family: 'Ubuntu', sans-serif;
   position: sticky;
-    img{
-      margin-right: 26px;
-      width: 60px;
-      height: 60px;
-      user-select: none;
-      cursor: pointer;
-    }
-    .title{
-      user-select: none;
-      margin-right: 73px;
-      font-size: 30px;
-      letter-spacing: 2px;
-      font-weight: bold;
-    }
-    .chose-mode-book{
-      margin-right: 35px;
-      cursor: pointer;
-    }
-    .search{
-      cursor: pointer;
-    }
-    .sign-up-btn{
-      margin-left: auto;
-      margin-right: 30px;
 
-    }
-    .sign-in-btn{
-      font-weight: lighter;
-      border: none;
-      box-shadow: none;
-    }
+  .logo-title {
+    display: flex;
+    align-items: center;
+  }
+
+  img {
+    margin-right: 26px;
+    width: 60px;
+    height: 60px;
+    user-select: none;
+    cursor: pointer;
+  }
+
+  .title {
+    user-select: none;
+    margin-right: 73px;
+    font-size: 30px;
+    letter-spacing: 2px;
+    font-weight: bold;
+  }
+
+  .chose-mode-book {
+    margin-right: 35px;
+    cursor: pointer;
+  }
+
+  .search {
+    cursor: pointer;
+  }
+
+  .sign-up-btn {
+    margin-left: auto;
+    margin-right: 30px;
+
+  }
+
+  .sign-in-btn {
+    font-weight: lighter;
+    border: none;
+    box-shadow: none;
+  }
 }

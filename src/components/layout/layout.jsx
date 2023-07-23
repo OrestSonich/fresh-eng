@@ -1,15 +1,24 @@
 import React from 'react'
 import '../../styles/layout/layout.scss'
+import AppFooter from "./app.footer"
+import AppNavbar from "./app.navbar"
+import { useLocation } from "react-router-dom"
+import { LOGIN_ROUTE, REGISTER_ROUTE } from "../../utils/variables/routes-consts"
 
 
 const Layout = ({ children }) => {
+    const navigator = useLocation()
     return (
         <div className="app">
-            {/*<AppNavbar/>*/}
+            {navigator.pathname === REGISTER_ROUTE || navigator.pathname === LOGIN_ROUTE
+                ? null
+                : <AppNavbar/>}
             <div className="content">
                 {children}
             </div>
-            {/*<AppFooter/>*/}
+            {navigator.pathname === REGISTER_ROUTE || navigator.pathname === LOGIN_ROUTE
+                ? null
+                : <AppFooter/>}
         </div>
     )
 }

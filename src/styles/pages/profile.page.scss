@@ -1,0 +1,102 @@
+@import "../variables";
+
+.profile-container {
+  padding: 50px 235px 43px 236px;
+  font-family: "Ubuntu", sans-serif;
+
+  .edit-bnt {
+    border-radius: 25px;
+    border: 1px solid rgba(0, 0, 0, 0.50);
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.25);
+    color: rgba(0, 0, 0, 0.50);
+    font-size: 36px;
+    font-weight: 400;
+    width: 253px;
+    height: 66px;
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      p {
+        margin-right: 30px;
+      }
+    }
+  }
+
+  h1 {
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 39px;
+  }
+
+  section {
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.50);
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  .main-section {
+    padding: 27px 52px;
+    display: flex;
+    margin-bottom: 40px;
+    height: 182px;
+    align-items: center;
+
+    .username {
+      margin-left: 49px;
+      margin-right: auto;
+
+      h3 {
+        font-size: 32px;
+        font-weight: 500;
+      }
+
+      p {
+        font-size: 28px;
+        font-weight: 400;
+      }
+    }
+  }
+
+  .info-section {
+    height: 558px;
+    padding: 43px 55px;
+
+    .flex-info-main {
+      display: flex;
+
+      h1 {
+        margin-right: auto;
+        margin-bottom: 56px;
+      }
+    }
+
+    .flex-info-desc {
+      justify-content: flex-start;
+      display: flex;
+
+      .column {
+        margin-right: 120px;
+
+        .pair-info {
+          margin-bottom: 40px;
+          font-size: 36px;
+          font-weight: 400;
+
+          .p-title-desc {
+            color: rgba(0, 0, 0, 0.60);
+            margin-bottom: -15px;
+          }
+
+          .p-info {
+          }
+
+        }
+      }
+    }
+  }
+}
+

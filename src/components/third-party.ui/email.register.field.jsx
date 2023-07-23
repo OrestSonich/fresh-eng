@@ -4,14 +4,16 @@ import { TextInput } from "@mantine/core"
 
 
 const EmailRegisterField = () => {
+
+
     return (
         <TextInput
-            label="Email address:"
-            placeholder="Your email"
+            placeholder="Email address:"
             size="xl"
             radius="md"
             className="mb-12"
-            icon={<IconAt size="25"/>}/>
+            icon={<IconAt size="25"/>}
+        />
     )
 }
 

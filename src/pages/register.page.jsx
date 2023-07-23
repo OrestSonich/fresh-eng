@@ -1,8 +1,10 @@
 import React from 'react'
-import '../styles/pages/register.page.scss'
+import '../styles/pages/auth.page.scss'
 import AppButton from "../components/app.ui/app.button"
 import PasswordRegisterField from "../components/third-party.ui/password.register.field"
 import EmailRegisterField from "../components/third-party.ui/email.register.field"
+import { NavLink } from "react-router-dom"
+import { LOGIN_ROUTE } from "../utils/variables/routes-consts"
 
 
 const RegisterPage = () => {
@@ -19,7 +21,9 @@ const RegisterPage = () => {
                 <div className="btn-holder">
                     <AppButton className="btn-app">Sign Up</AppButton>
                 </div>
-                <h3>Already have an account?<span>Log In</span></h3>
+                <NavLink to={LOGIN_ROUTE}>
+                    <h3>Already have an account?<span>Log In</span></h3>
+                </NavLink>
             </div>
             <div className="decoration">
                 <img src={require('../img/cards-with-logo.png')} alt="123"/>
