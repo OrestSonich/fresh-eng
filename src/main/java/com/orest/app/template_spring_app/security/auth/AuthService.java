@@ -1,7 +1,10 @@
 package com.orest.app.template_spring_app.security.auth;
 
 import com.orest.app.template_spring_app.entity.UserEntity;
-import com.orest.app.template_spring_app.exception.EmailAreBusyException;
+import com.orest.app.template_spring_app.entity.UserInfoEntity;
+import com.orest.app.template_spring_app.enums.Ranks;
+import com.orest.app.template_spring_app.exceptions.EmailAreBusyException;
+import com.orest.app.template_spring_app.repository.UserInfoRepo;
 import com.orest.app.template_spring_app.repository.UserRepo;
 import com.orest.app.template_spring_app.security.JwtService;
 import lombok.RequiredArgsConstructor;
@@ -11,10 +14,15 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.sql.Date;
+import java.time.LocalDate;
+import java.time.ZoneId;
+
 @Service
 @RequiredArgsConstructor
 public class AuthService {
     private final UserRepo repository;
+    private final UserInfoRepo infoRepository;
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
@@ -24,15 +32,19 @@ public class AuthService {
         if (repository.existsUserEntityByEmail(request.getEmail())){
             throw new EmailAreBusyException("This email are busy");
         }
+        UserInfoEntity userInfo = UserInfoEntity.builder()
+                .firstName(request.getFirstName())
+                .lastName(request.getLastName())
+                .phoneNumber(request.getPhoneNumber())
+                .rank(Ranks.BEGINNER)
+                .registeredAt(Date.valueOf(LocalDate.now(ZoneId.of("GMT+0300"))))
+                .build();
+        infoRepository.save(userInfo);
+
         var user = UserEntity.builder()
-//                .firstName(request.getFirstName())
-//                .lastName(request.getLastName())
-//                .email(request.getEmail())
-//                .password(passwordEncoder.encode(request.getPassword()))
-//                .role(UserRole.USER)
-//                .createdAt(Date.valueOf(LocalDate.now()))
-//                .enabled(true)
-                // todo realise
+                .email(request.getEmail())
+                .password(passwordEncoder.encode(request.getPassword()))
+                .info(userInfo)
                 .build();
         repository.save(user);
         var jwtToken = jwtService.generateJwt(user);

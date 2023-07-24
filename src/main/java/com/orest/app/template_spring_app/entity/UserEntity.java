@@ -1,19 +1,18 @@
 package com.orest.app.template_spring_app.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
 @Builder(toBuilder = true)
 @AllArgsConstructor
+@Table(name = "users")
 @Entity
 public class UserEntity implements UserDetails {
     @Id
@@ -21,6 +20,12 @@ public class UserEntity implements UserDetails {
     private Long id;
 
     private String email;
+
+    @OneToOne
+    private UserInfoEntity info;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
+    private List<LearnCatalogEntity> learnCatalogs;
 
     private String password;
 
@@ -31,7 +36,7 @@ public class UserEntity implements UserDetails {
 
     @Override
     public String getUsername() {
-        return null;                // todo configure
+        return email;
     }
 
     @ToString.Include(name = "password")

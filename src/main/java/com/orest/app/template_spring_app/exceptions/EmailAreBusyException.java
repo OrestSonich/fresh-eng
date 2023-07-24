@@ -1,4 +1,4 @@
-package com.orest.app.template_spring_app.exception;
+package com.orest.app.template_spring_app.exceptions;
 
 import org.springframework.security.core.AuthenticationException;
 

@@ -10,7 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/v1/auth")
+@RequestMapping("/api/auth")
 @RequiredArgsConstructor
 @CrossOrigin
 public class AuthController {
@@ -23,7 +23,7 @@ public class AuthController {
         return ResponseEntity.ok(service.register(request));
     }
 
-    @PostMapping("/authenticat")
+    @PostMapping("/login")
     public ResponseEntity<AuthenticationResponse> authenticate(
             @RequestBody AuthRequest request
     ) {
