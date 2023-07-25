@@ -22,8 +22,12 @@ public class JwtService {
     private String SECRET_KEY;
     @Value("${jwt.expiration}")
     private int expiration;
-    public String exctractEmail(String jwt) {
+    public String extractEmail(String jwt) {
         return extractClaim(jwt, Claims::getSubject);
+    }
+
+    public String extractEmailToString(String jwt){
+        return extractEmail(jwt.substring(7));
     }
 
     public <T> T extractClaim(String jwt, Function<Claims, T> claimsResolver){
@@ -50,7 +54,7 @@ public class JwtService {
     }
 
     public boolean isJwtValid(String jwt, UserDetails userDetails){
-        final String userEmail = exctractEmail(jwt);
+        final String userEmail = extractEmail(jwt);
         return (userEmail.equals(userDetails.getUsername())) && !isJwtExpired(jwt);
     }
 

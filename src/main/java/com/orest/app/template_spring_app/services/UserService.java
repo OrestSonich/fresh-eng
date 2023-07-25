@@ -18,13 +18,13 @@ public class UserService {
 
 
     public UserModel getUserFromTokenHeader(String authHeader){
-        String email = jwtService.exctractEmail(authHeader.substring(7));
+        String email = jwtService.extractEmailToString(authHeader);
         UserEntity user = repository.findByEmail(email).orElseThrow();
         return UserModel.toModel(user);
     }
 
     public void deleteUserFromTokenHeader(String authHeader) {
-        String email = jwtService.exctractEmail(authHeader.substring(7));
+        String email = jwtService.extractEmail(authHeader.substring(7));
         UserEntity user = repository.findByEmail(email).orElseThrow();
         user.setInfo(null);
         infoRepository.deleteById(user.getId());

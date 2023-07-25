@@ -1,5 +1,6 @@
 package com.orest.app.template_spring_app.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
@@ -24,10 +25,11 @@ public class UserEntity implements UserDetails {
     @OneToOne
     private UserInfoEntity info;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
-    private List<LearnCatalogEntity> learnCatalogs;
-
     private String password;
+
+    @JsonManagedReference
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
+    private List<CatalogEntity> catalogList;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -44,6 +46,10 @@ public class UserEntity implements UserDetails {
         return "*********";
     }
 
+
+    public void addCatalog(CatalogEntity learnCatalog){
+        catalogList.add(learnCatalog);
+    }
     @Override
     public boolean isAccountNonExpired() {
         return true;

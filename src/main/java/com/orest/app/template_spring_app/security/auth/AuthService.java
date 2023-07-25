@@ -41,6 +41,7 @@ public class AuthService {
                 .build();
         infoRepository.save(userInfo);
 
+
         var user = UserEntity.builder()
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))

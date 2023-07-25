@@ -20,7 +20,7 @@ public class CardEntity {
     private Long id;
 
     @ManyToMany(mappedBy = "cards")
-    private List<LearnCatalogEntity> learnCatalogs;
+    private List<CatalogEntity> learnCatalogs;
 
     private String word;
     private String translate;

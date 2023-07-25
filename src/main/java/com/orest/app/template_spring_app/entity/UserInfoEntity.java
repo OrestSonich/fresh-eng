@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
 
 
 @Data
@@ -25,6 +26,8 @@ public class UserInfoEntity {
     private String firstName;
     private String lastName;
     private String phoneNumber;
+
+
 
     @Enumerated(EnumType.STRING)
     private Ranks rank;
