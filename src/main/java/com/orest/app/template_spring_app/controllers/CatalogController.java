@@ -38,7 +38,12 @@ public class CatalogController {
 
     @GetMapping(value = "/all")
     public ResponseEntity<List<CatalogModel>> getAllCatalogs(){
-        return ResponseEntity.ok(service.getAllCatalogs());
+        return ResponseEntity.ok(service.getAllPublicCatalogs());
+    }
+
+    @GetMapping(value = "/{code}")
+    public ResponseEntity<CatalogModel> getCatalogByReference(@PathVariable String code){
+        return ResponseEntity.ok(service.getByReference(code));
     }
 
 }

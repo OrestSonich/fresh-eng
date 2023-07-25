@@ -1,6 +1,5 @@
 package com.orest.app.template_spring_app.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,6 +10,7 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 @Data
 @NoArgsConstructor
@@ -26,12 +26,15 @@ public class CatalogEntity {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    @JsonBackReference
     private UserEntity owner;
 
     private String name;
 
     private Date createdAt = java.sql.Date.valueOf(LocalDate.now(ZoneId.of("GMT+0300")));
+
+    private String individualReference = UUID.randomUUID().toString();
+
+    private boolean personal;
 
     @ManyToMany
     private List <CardEntity> cards;

@@ -9,10 +9,6 @@ import com.orest.app.template_spring_app.security.JwtService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.sql.Date;
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -41,8 +37,12 @@ public class CatalogService {
         repository.save(catalogEntity);
     }
 
-    public List<CatalogModel> getAllCatalogs() {
-        List<CatalogEntity> catalogEntities = repository.findAll();
+    public List<CatalogModel> getAllPublicCatalogs() {
+        List<CatalogEntity> catalogEntities = repository.findAllByPersonalIs(false);
         return CatalogModel.toModel(catalogEntities);
+    }
+
+    public CatalogModel getByReference(String ref) {
+        return CatalogModel.toModel(repository.findByIndividualReference(ref));
     }
 }

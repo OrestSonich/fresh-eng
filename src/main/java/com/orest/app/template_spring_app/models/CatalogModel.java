@@ -16,6 +16,8 @@ public class CatalogModel {
     private Long id;
     private String name;
     private String creator;
+    private boolean personal;
+    private String individualReference;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date createdAt;
     private List<CardModel> cards;
@@ -30,6 +32,8 @@ public class CatalogModel {
                 .id(entity.getId())
                 .creator(creatorFirstName + " " + creatorLastName)
                 .name(entity.getName())
+                .individualReference(entity.getIndividualReference())
+                .personal(entity.isPersonal())
                 .createdAt(entity.getCreatedAt())
                 .cards(entity.getCards().stream().map(CardModel::toModel).collect(Collectors.toList()))
                 .build();

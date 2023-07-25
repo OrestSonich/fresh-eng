@@ -1,6 +1,5 @@
 package com.orest.app.template_spring_app.entity;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
@@ -27,7 +26,6 @@ public class UserEntity implements UserDetails {
 
     private String password;
 
-    @JsonManagedReference
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
     private List<CatalogEntity> catalogList;
 
