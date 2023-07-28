@@ -16,6 +16,7 @@ import java.util.List;
 @Table(name = "cards")
 @Entity
 public class CardEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -24,6 +25,6 @@ public class CardEntity {
     private List<CatalogEntity> catalogs = new ArrayList<>();
 
     private String word;
-    private String translate;
 
+    private String translate;
 }

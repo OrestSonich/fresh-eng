@@ -20,8 +20,10 @@ public class JwtService {
 
     @Value("${jwt.secret}")
     private String SECRET_KEY;
+
     @Value("${jwt.expiration}")
     private int expiration;
+
     public String extractEmail(String jwt) {
         return extractClaim(jwt, Claims::getSubject);
     }
@@ -30,7 +32,8 @@ public class JwtService {
         return extractEmail(jwt.substring(7));
     }
 
-    public <T> T extractClaim(String jwt, Function<Claims, T> claimsResolver){
+    public <T> T extractClaim(String jwt,
+                              Function<Claims, T> claimsResolver){
         final Claims claims = extractAllClaims(jwt);
         return claimsResolver.apply(claims);
     }
@@ -40,9 +43,9 @@ public class JwtService {
     }
 
     public String generateJwt(
-            Map<String, Object> exctractClaims,
+            Map<String, Object> extractClaims,
             UserDetails userDetails
-    ){
+    ) {
         return Jwts
                 .builder()
                 .setSubject(userDetails.getUsername())
@@ -50,10 +53,9 @@ public class JwtService {
                 .setExpiration(new Date(System.currentTimeMillis() + expiration))
                 .signWith(getSisnInKey(), SignatureAlgorithm.HS256)
                 .compact();
-
     }
 
-    public boolean isJwtValid(String jwt, UserDetails userDetails){
+    public boolean isJwtValid(String jwt, UserDetails userDetails) {
         final String userEmail = extractEmail(jwt);
         return (userEmail.equals(userDetails.getUsername())) && !isJwtExpired(jwt);
     }
@@ -66,7 +68,7 @@ public class JwtService {
         return extractClaim(jwt, Claims::getExpiration);
     }
 
-    private Claims extractAllClaims(String jwt){
+    private Claims extractAllClaims(String jwt) {
         return Jwts
                 .parserBuilder()
                 .setSigningKey(getSisnInKey())

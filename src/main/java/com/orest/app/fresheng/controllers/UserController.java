@@ -25,13 +25,15 @@ public class UserController {
     @ExceptionHandler({AcceptPendingException.class})
 
     @GetMapping
-    public ResponseEntity<UserModel> getUser(@RequestHeader("Authorization") String header){
+    public ResponseEntity<UserModel> getUser(@RequestHeader("Authorization")
+                                                 String header){
          return ResponseEntity.ok(service.getUserFromTokenHeader(header));
     }
 
     @DeleteMapping
     @Transactional
-    public ResponseEntity<String> deleteUser(@RequestHeader("Authorization") String header){
+    public ResponseEntity<String> deleteUser(@RequestHeader("Authorization")
+                                                 String header){
         service.deleteUserFromTokenHeader(header);
         return ResponseEntity.ok("User deleted!");
     }

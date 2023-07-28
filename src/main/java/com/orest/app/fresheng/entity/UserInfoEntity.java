@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
-
 @Data
 @NoArgsConstructor
 @Builder(toBuilder = true)
@@ -23,14 +22,13 @@ public class UserInfoEntity {
     private Long id;
 
     private String firstName;
+
     private String lastName;
+
     private String phoneNumber;
-
-
 
     @Enumerated(EnumType.STRING)
     private Ranks rank;
 
     private Date registeredAt;
-
 }

@@ -1,7 +1,7 @@
 package com.orest.app.fresheng.config;
 
 
-import com.orest.app.fresheng.repository.UserRepo;
+import com.orest.app.fresheng.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,13 +14,11 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-
 @Configuration
 @RequiredArgsConstructor
 public class AppConfiguration {
 
-
-    private final UserRepo repository;
+    private final UserRepository repository;
 
     @Bean
     public UserDetailsService userDetailsService(){
@@ -37,7 +35,8 @@ public class AppConfiguration {
     }
 
     @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration config)
+            throws Exception {
         return config.getAuthenticationManager();
     }
 
@@ -45,5 +44,4 @@ public class AppConfiguration {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
 }

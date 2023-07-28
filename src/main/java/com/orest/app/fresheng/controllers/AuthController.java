@@ -1,6 +1,5 @@
 package com.orest.app.fresheng.controllers;
 
-
 import com.orest.app.fresheng.security.auth.AuthService;
 import com.orest.app.fresheng.security.auth.AuthenticationResponse;
 import com.orest.app.fresheng.security.auth.AuthRequest;
@@ -14,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 @CrossOrigin
 public class AuthController {
+
     private final AuthService service;
 
     @PostMapping("/register")
@@ -29,5 +29,4 @@ public class AuthController {
     ) {
         return ResponseEntity.ok(service.authenticate(request));
     }
-
 }

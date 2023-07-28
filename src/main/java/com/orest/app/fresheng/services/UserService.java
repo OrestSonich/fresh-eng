@@ -2,8 +2,8 @@ package com.orest.app.fresheng.services;
 
 import com.orest.app.fresheng.entity.UserEntity;
 import com.orest.app.fresheng.models.UserModel;
-import com.orest.app.fresheng.repository.UserInfoRepo;
-import com.orest.app.fresheng.repository.UserRepo;
+import com.orest.app.fresheng.repository.UserInfoRepository;
+import com.orest.app.fresheng.repository.UserRepository;
 import com.orest.app.fresheng.security.JwtService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -12,8 +12,8 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class UserService {
 
-    private final UserRepo repository;
-    private final UserInfoRepo infoRepository;
+    private final UserRepository repository;
+    private final UserInfoRepository infoRepository;
     private final JwtService jwtService;
 
 

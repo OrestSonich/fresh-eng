@@ -1,6 +1,5 @@
 package com.orest.app.fresheng.config;
 
-
 import com.orest.app.fresheng.security.JwtAuthenticateFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -40,5 +39,4 @@ public class SecurityConfiguration {
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
     }
-
 }

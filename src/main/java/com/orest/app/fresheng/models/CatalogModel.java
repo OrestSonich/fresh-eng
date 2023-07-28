@@ -13,13 +13,20 @@ import java.util.stream.Collectors;
 @Data
 @Builder
 public class CatalogModel {
+
     private Long id;
+
     private String name;
+
     private String creator;
+
     private boolean personal;
+
     private String individualReference;
+
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date createdAt;
+
     private List<CardModel> cards;
 
 
@@ -35,7 +42,8 @@ public class CatalogModel {
                 .individualReference(entity.getIndividualReference())
                 .personal(entity.isPersonal())
                 .createdAt(entity.getCreatedAt())
-                .cards(entity.getCards().stream().map(CardModel::toModel).collect(Collectors.toList()))
+                .cards(entity.getCards().stream().map(CardModel::toModel)
+                        .collect(Collectors.toList()))
                 .build();
     }
 
@@ -46,5 +54,4 @@ public class CatalogModel {
         }
         return catalogModels;
     }
-
 }

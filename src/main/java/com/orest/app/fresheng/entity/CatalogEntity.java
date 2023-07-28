@@ -47,5 +47,4 @@ public class CatalogEntity {
     public void addCard(CardEntity card){
         cards.add(card);
     }
-
 }

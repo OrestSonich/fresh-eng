@@ -16,12 +16,18 @@ import java.util.stream.Collectors;
 public class UserModel {
 
     private String firstName;
+
     private String lastName;
+
     private String email;
+
     private String phoneNumber;
+
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date registrationAt;
+
     private Ranks rank;
+
     private List<CatalogModel> catalogs;
 
     public static UserModel toModel(UserEntity entity){
@@ -36,6 +42,5 @@ public class UserModel {
                 .catalogs(entity.getCatalogList().stream()
                         .map(CatalogModel::toModel).collect(Collectors.toList()))
                 .build();
-    } 
-
+    }
 }

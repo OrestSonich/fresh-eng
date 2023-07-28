@@ -9,7 +9,9 @@ import lombok.Data;
 public class CardModel {
 
     private Long id;
+
     private String word;
+
     private String translate;
 
     public static CardModel toModel(CardEntity entity){
