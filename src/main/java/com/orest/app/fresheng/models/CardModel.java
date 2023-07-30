@@ -4,6 +4,9 @@ import com.orest.app.fresheng.entity.CardEntity;
 import lombok.Builder;
 import lombok.Data;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Data
 @Builder
 public class CardModel {
@@ -20,5 +23,13 @@ public class CardModel {
                 .word(entity.getWord())
                 .translate(entity.getTranslate())
                 .build();
+    }
+
+    public static List<CardModel> toModel(List<CardEntity> entityList){
+        List<CardModel> modelList = new ArrayList<>();
+        for (CardEntity el : entityList){
+            modelList.add(CardModel.toModel(el));
+        }
+        return modelList;
     }
 }

@@ -15,6 +15,7 @@ import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -45,7 +46,7 @@ public class CatalogServiceTest {
     public void should_GetCatalog_When_RefAreExist () {
 
         when(repository.findByIndividualReference(ref))
-                .thenReturn(catalogEntity);
+                .thenReturn(Optional.ofNullable(catalogEntity));
 
         final CatalogModel actual = service.getByReference(ref);
 
