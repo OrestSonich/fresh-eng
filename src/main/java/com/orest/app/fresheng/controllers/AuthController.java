@@ -1,8 +1,8 @@
 package com.orest.app.fresheng.controllers;
 
+import com.orest.app.fresheng.security.auth.AuthRequest;
 import com.orest.app.fresheng.security.auth.AuthService;
 import com.orest.app.fresheng.security.auth.AuthenticationResponse;
-import com.orest.app.fresheng.security.auth.AuthRequest;
 import com.orest.app.fresheng.security.auth.RegisterRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -29,4 +29,6 @@ public class AuthController {
     ) {
         return ResponseEntity.ok(service.authenticate(request));
     }
+
+
 }

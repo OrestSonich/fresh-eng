@@ -1,6 +1,7 @@
 package com.orest.app.fresheng.controllers;
 
 import com.orest.app.fresheng.entity.CatalogEntity;
+import com.orest.app.fresheng.exceptions.ApiRequestException;
 import com.orest.app.fresheng.models.CatalogModel;
 import com.orest.app.fresheng.services.CatalogService;
 import lombok.RequiredArgsConstructor;
@@ -38,7 +39,8 @@ public class CatalogController {
 
     @GetMapping(value = "/all")
     public ResponseEntity<List<CatalogModel>> getAllCatalogs(){
-        return ResponseEntity.ok(service.getAllPublicCatalogs());
+//        return ResponseEntity.ok(service.getAllPublicCatalogs());
+        throw new ApiRequestException("test");
     }
 
     @GetMapping(value = "/{code}")
