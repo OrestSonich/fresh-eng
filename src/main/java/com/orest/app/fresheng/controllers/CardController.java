@@ -4,6 +4,7 @@ import com.orest.app.fresheng.entity.CardEntity;
 import com.orest.app.fresheng.services.CardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,6 +27,6 @@ public class CardController {
                                      @RequestParam
                                      String catalogReference){
         service.addCard(card, catalogReference);
-        return ResponseEntity.ok("card added!");
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 }

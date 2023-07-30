@@ -12,8 +12,8 @@ import java.time.ZonedDateTime;
 public class ApiExceptionHandler {
 
     @ExceptionHandler(value = {ApiRequestException.class})
-    public ResponseEntity<Object> handleApiRequestException(ApiRequestException e) {
-        HttpStatus badRequest = HttpStatus.BAD_REQUEST;
+    public ResponseEntity<Object> handleJwtExpired(ApiRequestException e) {
+        HttpStatus badRequest = HttpStatus.NOT_FOUND;
         ApiExceptionModel apiExceptionModel = new  ApiExceptionModel(
                 e.getMessage(),
                 badRequest,
@@ -21,4 +21,5 @@ public class ApiExceptionHandler {
         );
         return new ResponseEntity<>(apiExceptionModel, badRequest);
     }
+
 }

@@ -1,11 +1,11 @@
 package com.orest.app.fresheng.controllers;
 
 import com.orest.app.fresheng.entity.CatalogEntity;
-import com.orest.app.fresheng.exceptions.ApiRequestException;
 import com.orest.app.fresheng.models.CatalogModel;
 import com.orest.app.fresheng.services.CatalogService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,16 +31,15 @@ public class CatalogController {
     }
 
     @PostMapping
-    public ResponseEntity<String> createCatalog(@RequestHeader("Authorization") String header,
+    public ResponseEntity<Object> createCatalog(@RequestHeader("Authorization") String header,
                                                 @RequestBody CatalogEntity catalogEntity){
         service.addCatalog(catalogEntity, header);
-        return ResponseEntity.ok("catalog added!");
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
     @GetMapping(value = "/all")
     public ResponseEntity<List<CatalogModel>> getAllCatalogs(){
-//        return ResponseEntity.ok(service.getAllPublicCatalogs());
-        throw new ApiRequestException("test");
+        return ResponseEntity.ok(service.getAllPublicCatalogs());
     }
 
     @GetMapping(value = "/{code}")

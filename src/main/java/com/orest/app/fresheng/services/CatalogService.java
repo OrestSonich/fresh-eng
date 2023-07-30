@@ -2,6 +2,7 @@ package com.orest.app.fresheng.services;
 
 import com.orest.app.fresheng.entity.CatalogEntity;
 import com.orest.app.fresheng.entity.UserEntity;
+import com.orest.app.fresheng.exceptions.ApiRequestException;
 import com.orest.app.fresheng.exceptions.CatalogException;
 import com.orest.app.fresheng.models.CatalogModel;
 import com.orest.app.fresheng.repository.CatalogRepository;
@@ -46,9 +47,10 @@ public class CatalogService {
     }
 
     public List<CatalogModel> getAllPublicCatalogs() {
-        List<CatalogEntity> catalogEntities = repository
-                .findAllByPersonalIs(false);
-        return CatalogModel.toModel(catalogEntities);
+        throw new ApiRequestException("catalogs not found");
+//        List<CatalogEntity> catalogEntities = repository
+//                .findAllByPersonalIs(false);
+//        return CatalogModel.toModel(catalogEntities);
     }
 
     public CatalogModel getByReference(String ref) {
