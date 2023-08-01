@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 
+import java.time.ZoneId;
 import java.time.ZonedDateTime;
 
 @Data
@@ -16,5 +17,5 @@ public class ApiExceptionModel {
     private final HttpStatus httpStatus;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm:ss")
-    private final ZonedDateTime timestamp;
+    private final ZonedDateTime timestamp = ZonedDateTime.now(ZoneId.of("GMT+0300"));
 }

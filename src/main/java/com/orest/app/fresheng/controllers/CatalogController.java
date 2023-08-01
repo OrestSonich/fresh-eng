@@ -3,6 +3,7 @@ package com.orest.app.fresheng.controllers;
 import com.orest.app.fresheng.entity.CatalogEntity;
 import com.orest.app.fresheng.models.CatalogModel;
 import com.orest.app.fresheng.services.CatalogService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -32,7 +33,7 @@ public class CatalogController {
 
     @PostMapping
     public ResponseEntity<Object> createCatalog(@RequestHeader("Authorization") String header,
-                                                @RequestBody CatalogEntity catalogEntity){
+                                                @RequestBody @Valid CatalogEntity catalogEntity){
         service.addCatalog(catalogEntity, header);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
@@ -46,5 +47,4 @@ public class CatalogController {
     public ResponseEntity<CatalogModel> getCatalogByReference(@PathVariable String code){
         return ResponseEntity.ok(service.getByReference(code));
     }
-
 }

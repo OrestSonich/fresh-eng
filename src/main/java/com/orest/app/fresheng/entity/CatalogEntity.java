@@ -1,6 +1,7 @@
 package com.orest.app.fresheng.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -29,6 +30,7 @@ public class CatalogEntity {
     @JoinColumn(name = "catalog")
     private UserEntity owner;
 
+    @NotNull(message = "should have name")
     private String name;
 
     private Date createdAt = java.sql.Date.valueOf(LocalDate.now(ZoneId.of("GMT+0300")));
