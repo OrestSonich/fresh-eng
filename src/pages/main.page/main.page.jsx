@@ -1,8 +1,8 @@
 import React from 'react'
-import '../styles/pages/main.page.scss'
-import AppCard from "../components/app.ui/app.card"
-import AppPaginationsDots from "../components/app.ui/app.paginations.dots"
-import AppButton from "../components/app.ui/app.button"
+import './main.page.scss'
+import AppCard from "../../components/app.ui/app.card/app.card"
+import AppPaginationsDots from "../../components/app.ui/app.paginations/app.paginations.dots"
+import AppButton from "../../components/app.ui/app.button/app.button"
 import { ArrowsClockwise } from '@phosphor-icons/react'
 
 

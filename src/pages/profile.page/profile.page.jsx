@@ -1,7 +1,7 @@
 import React from 'react'
 import { Avatar, Skeleton } from "@mantine/core"
-import '../styles/pages/profile.page.scss'
-import AppButton from "../components/app.ui/app.button"
+import './profile.page.scss'
+import AppButton from "../../components/app.ui/app.button/app.button"
 import { PencilSimpleLine } from "@phosphor-icons/react"
 
 

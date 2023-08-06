@@ -6,12 +6,12 @@ import {
     PROFILE_ROUTE,
     REGISTER_ROUTE
 } from "./variables/routes-consts"
-import MainPage from "../pages/main.page"
-import LoginPage from "../pages/login.page"
-import CardModePage from "../pages/card.mode.page"
-import ChoseModPage from "../pages/chose.mod.page"
-import profilePage from "../pages/profile.page"
-import RegisterPage from "../pages/register.page"
+import MainPage from "../pages/main.page/main.page"
+import LoginPage from "../pages/auth.pages/login.page"
+import CardModePage from "../pages/card.mode.page/card.mode.page"
+import ChoseModPage from "../pages/chose.mode.page/chose.mod.page"
+import profilePage from "../pages/profile.page/profile.page"
+import RegisterPage from "../pages/auth.pages/register.page"
 
 
 export const authRoutes = [

@@ -1,0 +1,24 @@
+@import "../../../styles/variables";
+
+.modal-container {
+  padding: 0 15px;
+
+
+  .title-text {
+    font-family: "Ubuntu", sans-serif;
+    margin-bottom: 10px;
+  }
+
+  .form-container {
+    margin-bottom: 10px;
+  }
+
+  .submit-button {
+    margin-top: 25px;
+    background-color: $light-blue-color;
+    padding: 10px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: normal;
+  }
+}

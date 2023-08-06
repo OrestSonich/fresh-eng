@@ -1,10 +1,10 @@
 import React from 'react'
-import EmailRegisterField from "../components/third-party.ui/email.register.field"
-import AppButton from "../components/app.ui/app.button"
-import '../styles/pages/auth.page.scss'
-import PasswordLoginField from "../components/third-party.ui/password.login.field"
+import EmailRegisterField from "../../components/third-party.ui/email.register.field"
+import AppButton from "../../components/app.ui/app.button/app.button"
+import './auth.page.scss'
+import PasswordLoginField from "../../components/third-party.ui/password.login.field"
 import { NavLink } from "react-router-dom"
-import { REGISTER_ROUTE } from "../utils/variables/routes-consts"
+import { REGISTER_ROUTE } from "../../utils/variables/routes-consts"
 
 
 const LoginPage = () => {
@@ -23,7 +23,7 @@ const LoginPage = () => {
                 </NavLink>
             </div>
             <div className="decoration">
-                <img src={require('../img/cards-with-logo.png')} alt="123"/>
+                <img src={require('../../img/cards-with-logo.png')} alt="123"/>
                 <h2>Fresh English: where <br/>
                     games and learning go <br/>
                     hand in hand!</h2>

@@ -1,10 +1,10 @@
 import React from 'react'
-import '../../styles/layout/navbar.scss'
+import './navbar.scss'
 import BookBookmark from '@phosphor-icons/react/BookBookmark'
 import { MagnifyingGlass } from "@phosphor-icons/react"
-import AppButton from "../app.ui/app.button"
+import AppButton from "../../app.ui/app.button/app.button"
 import { Link, NavLink } from "react-router-dom"
-import { CHOSE_MOD_ROUTE, LOGIN_ROUTE, MAIN_PAGE_ROUTE, REGISTER_ROUTE } from "../../utils/variables/routes-consts"
+import { CHOSE_MOD_ROUTE, LOGIN_ROUTE, MAIN_PAGE_ROUTE, REGISTER_ROUTE } from "../../../utils/variables/routes-consts"
 
 
 const AppNavbar = () => {
@@ -13,7 +13,7 @@ const AppNavbar = () => {
         <nav>
             <Link to={MAIN_PAGE_ROUTE}>
                 <div className="logo-title">
-                    <img src={require('../../img/logo-fresh.jpg')} alt=""/>
+                    <img src={require('../../../img/logo-fresh.jpg')} alt=""/>
                     <p className="title">FRESHENG</p>
                 </div>
             </Link>

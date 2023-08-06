@@ -1,8 +1,9 @@
-@import "../variables";
+@import "../../../styles/variables";
 
 .main {
   color: $text-white-color;
   font-size: 26px;
+  font-family: "Ubuntu", sans-serif;
   width: 170px;
   height: 55px;
   border-radius: 25px;

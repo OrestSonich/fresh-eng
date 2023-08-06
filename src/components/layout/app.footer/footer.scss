@@ -1,4 +1,4 @@
-@import "../variables";
+@import "../../../styles/variables";
 
 footer{
   margin-top: auto;
@@ -16,6 +16,7 @@ footer{
       letter-spacing: 0.72px;
       display: flex;
       justify-content: center;
+      cursor: pointer;
       p{
         margin: 0 30px;
       }

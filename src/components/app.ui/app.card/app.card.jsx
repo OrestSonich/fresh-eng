@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../styles/app.ui/app.card.scss'
+import './app.card.scss'
 
 
 const AppCard = ({ children, className }) => {

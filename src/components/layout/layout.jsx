@@ -1,7 +1,7 @@
 import React from 'react'
-import '../../styles/layout/layout.scss'
-import AppFooter from "./app.footer"
-import AppNavbar from "./app.navbar"
+import './layout.scss'
+import AppFooter from "./app.footer/app.footer"
+import AppNavbar from "./app.navbar/app.navbar"
 import { useLocation } from "react-router-dom"
 import { LOGIN_ROUTE, REGISTER_ROUTE } from "../../utils/variables/routes-consts"
 
