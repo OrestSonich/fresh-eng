@@ -15,7 +15,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/catalogs")
 @RequiredArgsConstructor
-@CrossOrigin
+@CrossOrigin(value = {"http://localhost:3000/"})
 public class CatalogController {
 
     private CatalogService service;

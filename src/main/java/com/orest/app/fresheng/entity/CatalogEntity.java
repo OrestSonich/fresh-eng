@@ -37,7 +37,7 @@ public class CatalogEntity {
 
     private String individualReference = UUID.randomUUID().toString();
 
-    private boolean personal;
+    private boolean personal = false;
 
     @ManyToMany
     @JoinTable(
