@@ -24,7 +24,7 @@ export const authRoutes = [
         component: ChoseModPage
     },
     {
-        path: PROFILE_ROUTE(),
+        path: PROFILE_ROUTE,
         component: profilePage
     },
 ]

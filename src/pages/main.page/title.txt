@@ -1,0 +1,17 @@
+<div className="flex-container">
+                    <div className="text-container">
+                        <h1>Start teach <br/>
+                            dsadsadsad</h1>
+                        <hr className="line"/>
+                        <h3>h2 text information h2 text <br/>
+                            information h2 text information</h3>
+                        <h3>h2 text information h2 text <br/>
+                            information h2 text information</h3>
+                    </div>
+                    <div className="card-contain">
+                        <AppCard/>
+                    </div>
+                </div>
+                <div className="pagination-container">
+                    <AppPaginationsDots count={3}/>
+                </div>

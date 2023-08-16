@@ -3,22 +3,25 @@ import './footer.scss'
 import { GithubLogo, InstagramLogo, LinkedinLogo, TelegramLogo } from "@phosphor-icons/react"
 import AppModalFeedback from "../../app.ui/app.modal.feedback/AppModalFeedback"
 import { useDisclosure } from "@mantine/hooks"
-import { ChakraProvider, useToast } from "@chakra-ui/react"
+import { useToast } from "@chakra-ui/react"
+import AppModalAbout from "../../app.ui/app.modal.about/app.modal.about"
+import AppModalReport from "../../app.ui/app.modal.report/app.modal.report"
 
 
 
 const AppFooter = () => {
 
-    const [ openedFeedback, { open, close } ] = useDisclosure(false)
+    const [ openedFeedback, { open: openFeedback, close: closeFeedback } ] = useDisclosure(false)
+    const [ openedAbout, { open: openAbout, close: closeAbout } ] = useDisclosure(false)
+    const [ openedReport, { open: openReport, close: closeReport } ] = useDisclosure(false)
     const toast = useToast()
 
 
-
-    const toastHandler = () => {
+    const toastHandler = (title, status, desc) => {
         toast({
-                  title: 'Thanks for feedback!',
-                  status: 'success',
-                  description: 'I appreciate all your feedback!',
+                  title: title,
+                  status: status,
+                  description: desc,
                   duration: 3000,
                   variant: 'left-accent',
                   position: 'bottom-right',
@@ -31,10 +34,10 @@ const AppFooter = () => {
         <footer>
             <div className="container">
                 <div className="reports">
-                    <p onClick={() => console.log()}>report a problem</p>
+                    <p onClick={() => openReport()}>report a problem</p>
 
-                    <p>about us</p>
-                    <p onClick={() => open()}>contact us</p>
+                    <p onClick={() => openAbout()}>about us</p>
+                    <p onClick={() => openFeedback()}>contact us</p>
                 </div>
                 <div className="socials">
                     <a href="https://www.instagram.com/orest_sonich/" target="_blank"><InstagramLogo size={45}/></a>
@@ -45,9 +48,16 @@ const AppFooter = () => {
                 </div>
                 <p className="copyright">fresheng pet project || Developed By: Orest Sonich</p>
             </div>
-            <ChakraProvider>
-                <AppModalFeedback opened={openedFeedback} callback={toastHandler} close={close}></AppModalFeedback>
-            </ChakraProvider>
+            <AppModalReport opened={openedReport} close={closeReport} callback={() =>
+                toastHandler('Thanks for report problem!',
+                             'success',
+                             'I appreciate all your feedback!')}/>
+            <AppModalAbout opened={openedAbout} close={closeAbout}/>
+            <AppModalFeedback opened={openedFeedback} callback={() =>
+                toastHandler('Thanks for feedback!',
+                             'success',
+                             'I appreciate all your feedback!')}
+                              close={closeFeedback}/>
         </footer>
     )
 }

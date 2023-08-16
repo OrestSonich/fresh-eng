@@ -1,4 +1,4 @@
-export const PROFILE_ROUTE = (id) => id ? `/profile/${id}` : '/profile:id'
+export const PROFILE_ROUTE = '/profile'
 export const MAIN_PAGE_ROUTE = '/'
 export const CHOSE_MOD_ROUTE = '/mode'
 export const CARDS_MODE_ROUTE = '/cards'

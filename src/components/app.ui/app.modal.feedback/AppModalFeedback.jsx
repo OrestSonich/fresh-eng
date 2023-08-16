@@ -81,6 +81,7 @@ const AppModalFeedback = ({ opened, close, callback }) => {
                             label="Your message"
                             placeholder="Please include all relevant information"
                             minRows={3}
+                            required
                         />
 
                         <Group position="right">
