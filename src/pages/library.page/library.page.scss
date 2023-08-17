@@ -1,0 +1,43 @@
+.library-container {
+  padding: 0 150px;
+
+  .switcher {
+    text-align: center;
+    margin: 45px 0;
+  }
+
+  .controls {
+    display: flex;
+    align-items: center;
+    margin: 0 -22.5;
+    padding: 0 30px;
+    margin-bottom: 35px;
+
+
+    .new-catalog-btn {
+      width: 260px;
+
+    }
+  }
+
+  .flex-col {
+    flex: 0 1 33.333%;
+
+  }
+
+  .flex-opt {
+    flex: 0 1 33.333%;
+    text-align: end;
+  }
+
+  .catalogs-holder {
+    padding: 50px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 60px;
+  }
+
+
+}
+

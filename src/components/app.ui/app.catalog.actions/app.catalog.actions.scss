@@ -1,0 +1,21 @@
+@import "../../../styles/variables";
+
+.action-modal {
+  padding: 40px 50px;
+
+  .end-btn {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+
+    .btn-cancel {
+      background-color: $text-white-color;
+      color: rgba(0, 0, 0, 0.6);
+      width: 50%;
+    }
+
+    .btn-create {
+      width: 50%;
+    }
+  }
+}

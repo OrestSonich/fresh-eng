@@ -1,0 +1,61 @@
+@import "../../../styles/variables";
+
+.catalog-card {
+  width: 760px;
+  max-width: 760px;
+  height: 186px;
+  border-radius: 15px;
+  border: 2px solid $light-border-color;
+  background-color: $back-light-color;
+  padding: 20px 40px;
+
+  h1 {
+    font-size: 32px;
+    letter-spacing: 1.6px;
+  }
+
+  hr {
+    border: 1px solid $navbar-color;
+    width: 95%;
+    margin-bottom: 5px;
+  }
+
+  .flex-catalog-prev {
+    display: flex;
+    justify-content: space-between;
+
+    .main-cat-preview {
+      h2 {
+        font-size: 28px;
+        font-weight: 400;
+        letter-spacing: 1.4px;
+        margin-bottom: 10px;
+      }
+
+      .author {
+        display: flex;
+        align-items: center;
+        font-size: 28px;
+        font-weight: 300;
+        letter-spacing: 1.4px;
+
+        p {
+          margin-right: 15px;
+        }
+      }
+
+    }
+
+    .secondary-cat-preview {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 300;
+      letter-spacing: 1.4px;
+
+      p:first-child {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+

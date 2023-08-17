@@ -5,7 +5,7 @@ import { MagnifyingGlass, SignOut } from "@phosphor-icons/react"
 import AppButton from "../../app.ui/app.button/app.button"
 import { Link, NavLink } from "react-router-dom"
 import {
-    CHOSE_MOD_ROUTE,
+    LIBRARY_ROUTE,
     LOGIN_ROUTE,
     MAIN_PAGE_ROUTE,
     PROFILE_ROUTE,
@@ -62,7 +62,7 @@ const AppNavbar = () => {
                     </div>
                 </Link>
             }
-            <NavLink to={CHOSE_MOD_ROUTE}>
+            <NavLink to={LIBRARY_ROUTE}>
                 <BookBookmark color={'#FAF9F9'} size={48} className="chose-mode-book"/>
             </NavLink>
             <NavLink to={'/profile:id'}>

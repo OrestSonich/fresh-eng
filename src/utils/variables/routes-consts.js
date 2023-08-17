@@ -1,6 +1,7 @@
 export const PROFILE_ROUTE = '/profile'
 export const MAIN_PAGE_ROUTE = '/'
 export const CHOSE_MOD_ROUTE = '/mode'
+export const LIBRARY_ROUTE = '/library'
 export const CARDS_MODE_ROUTE = '/cards'
 export const LOGIN_ROUTE = '/login'
 export const REGISTER_ROUTE = '/register'
